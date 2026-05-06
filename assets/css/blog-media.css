@@ -1,0 +1,612 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.card-div-mother {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 35px;
+    padding-right: 550px; /* Platz für fixed aside */
+    margin-top: 75px;
+    margin-left: 0;
+}
+
+.card-div-daughter {
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 35px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 100%;
+}
+
+section {
+    flex: 3;
+}
+
+/* CSS Eintrag Eingabe Card */
+aside {
+    position: fixed;
+    top: 100px;
+    right: 25px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    margin: auto;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input[type='text']{
+    width: 100%;
+    border-radius: 16px !important;
+    border: 1px solid #dcdcdc;
+    color: #000;
+    font-size: 16px;
+    padding: 5px 5px;
+    outline: none;
+    margin-top: 15px;
+    box-sizing: border-box;
+    resize: none !important;
+}
+
+.input-group textarea {
+    width: 100%;
+    border-radius: 16px !important;
+    border: 1px solid #dcdcdc;
+    color: #000;
+    font-size: 16px;
+    padding: 5px 5px;
+    outline: none;
+    margin-top: 15px;
+    height: 450px;
+    box-sizing: border-box;
+    resize: none !important; 
+}
+
+.mediaupload-button {
+    margin-left: 75px;
+}
+
+input[type='file']::file-selector-button{
+    background: linear-gradient(to right bottom, #eec0da, #f5bed0, #f9bec4, #fabfb9, #f8c1af, #f9c5ab, #f9cba8, #f7d0a5, #fbd8a6, #fde1a7, #feeaa9, #fef4ac);
+    width: 100%;
+    border: none;
+    padding: 12px 0;
+    border-radius: 10px;
+}
+
+/* Card Farb-Buttons CSS */
+.upload-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.upload-button {
+    background: linear-gradient(to right, #eec0da, #d9c7ed, #c0d0f5, #abd7f1, #a4dce4, #9fdce2, #99dbe0, #94dbde, 
+                                #86d6ef, #8bcefc, #a5c2ff, #c8b3f9);
+    width: 100px;
+    border: none;
+    padding: 12px 0;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.upload-button:hover{
+    transform: translateY(-2px);
+}
+
+
+.farbenbuttons {
+    height: 50px;
+    width: 300px;
+    justify-content: center;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.farbenbuttons button {
+    border: none;
+    border-radius: 10px;
+    padding: 9px 0;
+    margin: 5px 5px 0 5px;
+}
+
+input[type="radio"] {
+ display: none;
+}
+input[type="radio"]:checked + label span {
+ transform: scale(1.25);
+}
+input[type="radio"]:checked + label .rosa {
+ border: 2px solid #b3749e; 
+}
+input[type="radio"]:checked + label .peach {
+ border: 2px solid #b18c79; 
+}
+input[type="radio"]:checked + label .lemon {
+ border: 2px solid #cfcf8a; 
+}
+input[type="radio"]:checked + label .mint {
+ border: 2px solid #89b9a9; 
+}
+input[type="radio"]:checked + label .lightblue {
+ border: 2px solid #8bb3c5; 
+}
+input[type="radio"]:checked + label .lavender {
+ border: 2px solid #956cc7; 
+}
+label {
+ display: inline-block;
+ width: 25px;
+ height: 25px;
+ margin-right: 10px;
+ cursor: pointer;
+}
+label:hover span {
+ transform: scale(1.25);
+}
+label span {
+ display: block;
+ width: 100%;
+ height: 100%;
+ transition: transform 0.2s ease-in-out;
+}
+label span.rosa {
+ background: #eec0da;
+}
+label span.peach {
+ background: #f0c6a4;
+}
+label span.lemon {
+ background: #fef4ac;
+}
+label span.mint {
+ background: #b3decd;
+}
+label span.lightblue {
+ background: #bae8f4;
+}
+label span.lavender {
+ background: #c8b3f9;
+}
+
+.form-wrapper{
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: 500px;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+    padding: 40px 30px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ======================================== */
+
+/* Large Desktop - Optimierung (1200px - 1699px) */
+@media (min-width: 1200px) and (max-width: 1699px) {
+    .card-div-mother {
+        padding-right: 550px;
+        margin-left: 0;
+    }
+}
+
+/* Desktop - Cards nicht mehr abgeschnitten (< 1700px) */
+@media (max-width: 1699px) {
+    .card-div-mother {
+        padding-left: 20px;
+        padding-right: 550px;
+    }
+}
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+    .card-div-mother {
+        padding-right: 35px;
+    }
+    .card-div-mother {
+        margin-left: 0;
+        margin-top: 20px;
+        padding: 20px;
+        justify-content: center;
+    }
+    
+    .card-div-daughter {
+        padding: 20px;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    section {
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    aside {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 20px auto;
+        max-width: 600px;
+        width: 90%;
+    }
+    
+    .input-group textarea {
+        height: 300px;
+    }
+    
+    .mediaupload-button {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    input[type='file']::file-selector-button {
+        width: 100%;
+    }
+    
+    .upload-button {
+        margin-left: 30px;
+    }
+}
+
+/* ========================================
+   TOGGLE ASIDE FEATURE (< 1200px)
+   ======================================== */
+
+/* Floating Button */
+@media (max-width: 1199px) {
+    .toggle-aside-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #eec0da, #c8b3f9);
+        border: none;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .toggle-aside-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    }
+    
+    .toggle-aside-btn:active {
+        transform: scale(0.95);
+    }
+    
+    /* Aside versteckt (außerhalb rechts) */
+    aside {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 90%;
+        max-width: 500px;
+        height: 100vh;
+        margin: 0;
+        padding: 80px 20px 30px 20px;
+        z-index: 1002;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+        overflow-y: auto;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Aside sichtbar (eingefahren) */
+    aside.active {
+        right: 0;
+    }
+    
+    /* Close Button (X) */
+    .aside-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.1);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+    
+    .aside-close-btn:hover {
+        background: rgba(0,0,0,0.2);
+        transform: scale(1.1);
+    }
+    
+    .aside-close-btn:active {
+        transform: scale(0.9);
+    }
+    
+    /* Overlay (dunkler Hintergrund) */
+    .aside-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    
+    .aside-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Cards haben vollen Platz */
+    .card-div-mother {
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-left: 0;
+    }
+    
+    /* Input-Felder im Aside - Padding für Border-Sichtbarkeit */
+    aside .input-group input[type="text"],
+    aside .input-group input[type="file"],
+    aside .input-group textarea {
+        margin: 0 10px;
+        width: calc(100% - 20px);
+    }
+    
+    aside .input-group {
+        padding: 0 10px;
+    }
+}
+
+/* Mobile Landscape & Small Tablets (576px - 767px) */
+@media (max-width: 767px) {
+    body {
+        padding: 0;
+    }
+    
+    .card-div-mother {
+        margin-left: 0;
+        margin-top: 80px;
+        padding: 15px 10px;
+        justify-content: center;
+    }
+    
+    .card-div-daughter {
+        padding: 10px;
+        margin: 8px 5px;
+        width: 100%;
+    }
+    
+    .card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .card img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    aside {
+        position: static;
+        padding: 20px;
+        margin: 15px 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .form-wrapper {
+        width: 100%;
+        padding: 25px 20px;
+    }
+    
+    .input-group input[type='text'] {
+        font-size: 15px;
+    }
+    
+    .input-group textarea {
+        height: 200px;
+        font-size: 15px;
+    }
+    
+    .mediaupload-button {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    input[type='file']::file-selector-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    
+    .upload-buttons-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .upload-button {
+        margin-left: 0;
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+    
+    .farbenbuttons {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile Portrait (< 576px) */
+@media (max-width: 575px) {
+    .card-div-mother {
+        padding: 10px 5px;
+        margin-top: 70px;
+    }
+    
+    .card-div-daughter {
+        padding: 8px;
+        margin: 5px 0;
+    }
+    
+    .card {
+        font-size: 14px;
+    }
+    
+    .card .h4 {
+        font-size: 1.25rem;
+    }
+    
+    .card .h6 {
+        font-size: 0.9rem;
+    }
+    
+    .card img {
+        max-width: 200px;
+    }
+    
+    aside {
+        padding: 15px;
+        margin: 10px 5px;
+    }
+    
+    .form-wrapper {
+        padding: 20px 15px;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+    }
+    
+    .input-group input[type='text'] {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .input-group textarea {
+        height: 150px;
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .input-group .h5 {
+        font-size: 1rem;
+    }
+    
+    .mediaupload-button {
+        margin-top: 10px;
+    }
+    
+    input[type='file']::file-selector-button {
+        font-size: 13px;
+        padding: 10px 0;
+    }
+    
+    .upload-button {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    
+    .farbenbuttons {
+        padding-top: 5px;
+    }
+    
+    label {
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
+    }
+}
+
+/* Extra Small Devices (< 375px) */
+@media (max-width: 374px) {
+    .card-div-mother {
+        padding: 8px 3px;
+    }
+    
+    .card .h4 {
+        font-size: 1.1rem;
+    }
+    
+    .card .h6 {
+        font-size: 0.85rem;
+    }
+    
+    .card img {
+        max-width: 180px;
+    }
+    
+    aside {
+        padding: 12px;
+    }
+    
+    .form-wrapper {
+        padding: 15px 10px;
+    }
+    
+    .input-group textarea {
+        height: 130px;
+    }
+    
+    input[type='file']::file-selector-button {
+        font-size: 12px;
+    }
+    
+    label {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+    }
+}

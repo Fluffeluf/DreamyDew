@@ -1,0 +1,262 @@
+/* * steht für allgemeine Formatierung der Seite*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(to right, #eec0da, #d9c7ed, #c0d0f5, #abd7f1, #a4dce4, #9fdce2, #99dbe0, #94dbde, 
+                                                #86d6ef, #8bcefc, #a5c2ff, #c8b3f9);
+    display: flex;
+    /*flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;*/
+    align-items: center;
+    height: 100vh;
+}
+
+/* CSS für Form-Feld außen rum */
+.form-wrapper{
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: 500px;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+    padding: 40px 30px;
+    margin: 0 20px; /* Abstand vom Rand */
+}
+
+@keyframes fadeIn {
+    form {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+h1{
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* CSS für die Input Felder*/
+.input-group{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 30px !important; /*!important ist hier jetzt wichtig, 
+    weil Bootstrap mir mein CSS überschreibt -.- */
+    border: none;
+    background-color: rgba(255, 255, 255, 0.16);
+    color: #000000;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+/* Damit wenn jemand im Textfeld ist, das Textfeld leuchtet*/
+.input-group input:focus{
+    background-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+
+.floating-label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+    font-size: 25px;
+    pointer-events: none;
+}
+
+.input-group input:focus + .floating-label,
+.input-group input:not(:placeholder-shown) + .floating-label{
+    top: -20px;
+    font-size: 16px;
+    color: #000000;
+}
+
+button{
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to left, #eec0da, #d9c7ed, #c0d0f5, #abd7f1, #a4dce4, #9fdce2, #99dbe0, #94dbde, 
+                                                #86d6ef, #8bcefc, #a5c2ff, #c8b3f9);
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+button:hover{
+    background-color: linear-gradient(to left bottom, #eec0da, #d9c7ed, #c0d0f5, #abd7f1, #a4dce4, #9fdce2, #99dbe0, #94dbde, 
+                                                #86d6ef, #8bcefc, #a5c2ff, #c8b3f9);;
+    transform: translateY(-2px);
+}
+
+
+.logoout{
+     margin: auto;
+     text-align: center;
+     margin-top: 200px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ======================================== */
+
+/* Desktop - Logo früher verkleinern (1200px - 1499px) */
+@media (min-width: 1200px) and (max-width: 1499px) {
+    body img {
+        height: 600px !important;
+        margin: 20px auto !important;
+    }
+    
+    .form-wrapper {
+        margin: 0 30px;
+    }
+}
+
+/* Tablet & Small Desktop (768px - 1199px) */
+@media (max-width: 1199px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+        justify-content: flex-start;
+    }
+    
+    body img {
+        height: 400px !important;
+        margin: 20px auto !important;
+        display: block;
+    }
+    
+    .form-wrapper {
+        width: 90%;
+        max-width: 500px;
+        margin: 20px auto;
+    }
+    
+    .logoout {
+        margin-top: 50px;
+    }
+}
+
+/* Mobile Landscape & Small Tablets (576px - 767px) */
+@media (max-width: 767px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding: 15px;
+    }
+    
+    body img {
+        height: 250px !important;
+        margin: 15px auto !important;
+    }
+    
+    .form-wrapper {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
+    
+    .floating-label {
+        font-size: 20px;
+    }
+    
+    .input-group input {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+    
+    button {
+        font-size: 15px;
+        padding: 10px 0;
+    }
+    
+    .logoout {
+        margin-top: 30px;
+    }
+}
+
+/* Mobile Portrait (< 576px) */
+@media (max-width: 575px) {
+    body {
+        padding: 10px;
+    }
+    
+    body img {
+        height: 180px !important;
+        margin: 10px auto !important;
+    }
+    
+    .form-wrapper {
+        padding: 25px 15px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .floating-label {
+        font-size: 18px;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+    }
+    
+    .input-group input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .input-group input:focus + .floating-label,
+    .input-group input:not(:placeholder-shown) + .floating-label {
+        top: -18px;
+        font-size: 14px;
+    }
+    
+    button {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    
+    a {
+        font-size: 14px;
+    }
+}
+
+/* Extra Small Devices (< 375px) */
+@media (max-width: 374px) {
+    body img {
+        height: 150px !important;
+    }
+    
+    .form-wrapper {
+        padding: 20px 12px;
+    }
+    
+    h1 {
+        font-size: 1.25rem;
+    }
+}
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DreamyDew</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/login.css?v=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src='../assets/images/logo-mit-text.png' height="800px" style="margin-left:200px;margin-right:10px;"><br><br>
+    <div class="form-wrapper">
+        <form class="login-form" method="post">
+            <h1>DreamyDew-Regestrierung</h1>
+            <br><br>
+            <div class="input-group">
+                <input type='text' name='username' id="username" required>
+                <label for="username" class="floating-label">Benutzername:</label>
+            </div>
+            <br><br>
+            <div class="input-group">
+                <input type='password' name='passwort' id="passwort" required>
+                <label for="passwort" class="floating-label">Passwort:</label>
+            </div>
+            <br><br>
+            <button type='submit' formaction="../actions/registrierung.php" title="Registrieren">Registrieren</button>
+            <br><br>
+            <a href="../pages/login.html" title="Registrieren">Schon einen Account? Jetzt Anmelden</a>
+        </form>
+    </div>
+</body>
+</html>
