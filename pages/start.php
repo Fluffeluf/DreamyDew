@@ -16,7 +16,6 @@
 			// Konfiguration laden
 		    //include("../config.php");
 		          
-		          
 		    // Hier wird geschaut ob der User sich schon angemeldet hat damit er
 			// weiter arbeiten darf z.B. von Medien zurück zu Start besonders hilfreich
 		    if (isset($_SESSION['username']) && isset($_SESSION['id']) && $_SESSION['id'] === session_id())
@@ -111,7 +110,7 @@
 		    // dann Fehlermeldung
 		    if(!$found)
 		    {
-		        echo("Bitte überprüfen Sie ob der Benutzername oder das Passwort passt.<br><br>
+		        echo("Bitte überprüfen Sie ob der Benutzername und das Passwort passen.<br><br>
 		            <a href='login.html'>Hier zum Login</a>");
 		        exit;
 		    }
