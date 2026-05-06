@@ -11,7 +11,7 @@
     <?php
         // Prüfung ob der User noch in der selben Session ist
         session_start(); 
-		if(!isset($_SESSION['id']) || $_SESSION['id']!=session_id())
+	if(!isset($_SESSION['id']) || $_SESSION['id']!=session_id())
         {
             // Wenn nicht dann Fehlermeldung
             echo("Bitte zuerst einloggen<br><br>
@@ -30,7 +30,7 @@
         $text = $_POST["text"];
         $farbe = $_POST["farben"];
 
-        include("../functions.php");
+        include("../function.php");
 
 
         // Datenbank öffnen + Maximale Eintrags ID holen
@@ -42,8 +42,8 @@
         $id = $satz1["maxEintrag"]+1;
 
         // Eintrag in die Datenbank speichern
-        $sql = "insert eintraege
-                set ideintrag = $id, ueberschrift='$ueberschrift', eintrag='$text', idbenutzer='$userid', farbe='$farbe';";
+        $sql = "insert eintraege (ueberschrift, eintrag, idbenutzer, farbe)
+                values ('$ueberschrift', '$text', '$userid', '$farbe');";
         //echo("$sql");
         $cursor = $mydb->exec($sql);
 

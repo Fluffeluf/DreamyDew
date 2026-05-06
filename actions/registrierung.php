@@ -16,7 +16,7 @@
         $pw = $_POST["passwort"];
 
         // Datenbank öffnen
-        include("../functions.php");
+	include("../function.php");
         $mydb = db_oeffnen();
 
         // Max ID aus Datenbank holen für den neuen Nutzer
@@ -24,12 +24,15 @@
         $cursor1 = $mydb->query($sql1);
         $satz1 = $cursor1->fetch(PDO::FETCH_ASSOC);
         //ID um 1 erhöhen
-        $id = $satz1["maxId"]+1;
+        //$id = $satz1["maxId"]+1;
         
         // Neuen Nutzer in die Datenbank einfügen
-        $sql = "insert into benutzer (idbenutzer, Benutzername, Passwort)
-                    values($id, '$user', $pw);";
-        $cursor = $mydb->exec($sql);
+        $sql = "insert into benutzer (Benutzername, Passwort)
+                    values('$user', '$pw');";
+	$cursor = $mydb->exec($sql);
+	//echo("<p>PDO::errorCode(): ");
+	//echo($mydb->errorCode());
+	//echo("</p>");
        
         // Benutzer zur Login-Seite schicken
         echo("<div class='form-wrapper'>

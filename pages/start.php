@@ -73,7 +73,7 @@
 		    }
 
 		    // PRODUCTION MODE: Datenbank-Login
-			include(".function.php");
+			include("../function.php");
 			$mydb = db_oeffnen();
 			$sql = "select idbenutzer, Benutzername, Passwort
 					from benutzer;";
