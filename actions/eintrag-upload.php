@@ -8,9 +8,11 @@
     <title>DreamyDew</title>
 </head>
 <body>
-    <?php
+<?php
         // Prüfung ob der User noch in der selben Session ist
         session_start(); 
+        echo(" _SESSION[id]: " . $_SESSION['id']);
+	echo(" session_id(): " . session_id());
 	if(!isset($_SESSION['id']) || $_SESSION['id']!=session_id())
         {
             // Wenn nicht dann Fehlermeldung

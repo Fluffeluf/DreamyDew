@@ -10,9 +10,10 @@
 	<body>
     <!--Form-Tag der den eingegebenen Eintrag zum Upload weitergibt-->
 	<form action="../actions/eintrag-upload.php" method="post">
-		<?php
+<?php
+    error_reporting(E_ALL);
 		    session_start();
-		          
+
 			// Konfiguration laden
 		    //include("../config.php");
 		          
