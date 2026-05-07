@@ -28,7 +28,9 @@ body{
     text-align: center;
     animation: fadeIn 1.2s ease-in-out;
     padding: 40px 30px;
-    margin: 0 20px; /* Abstand vom Rand */
+    margin-left:auto;
+    margin-right: auto;
+    /* Abstand vom Rand */
 }
 
 @keyframes fadeIn {
@@ -124,7 +126,8 @@ button:hover{
     }
     
     .form-wrapper {
-        margin: 0 30px;
+        margin-left:auto;
+        margin-right: auto;
     }
 }
 
@@ -145,7 +148,8 @@ button:hover{
     .form-wrapper {
         width: 90%;
         max-width: 500px;
-        margin: 20px auto;
+        margin-left:auto;
+        margin-right: auto;
     }
     
     .logoout {
