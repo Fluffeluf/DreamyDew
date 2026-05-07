@@ -8,7 +8,7 @@
     <title>DreamyDew</title>
 </head>
 <body>
-    <?php
+<?php
         // Prüfung ob der User noch in der selben Session ist
         session_start();
 
