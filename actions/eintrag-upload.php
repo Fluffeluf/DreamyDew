@@ -10,19 +10,16 @@
 <body>
     <?php
         // Prüfung ob der User noch in der selben Session ist
-        session_start(); 
-	if(!isset($_SESSION['id']) || $_SESSION['id']!=session_id())
-        {
-            // Wenn nicht dann Fehlermeldung
-            echo("Bitte zuerst einloggen<br><br>
-                  <a href='login.html>Hier zum login</a>");
-            exit;
+        session_start();
+
+        if(!isset($_SESSION['userid'])) {
+        echo("Bitte zuerst einloggen<br><br>
+              <a href='login.html'>Hier zum login</a>");
+        exit;   
         }
 
-        // Session Variablen weitergeben
-        $username = $_SESSION['username'];
-        $userid = $_SESSION['userid'];
-        $id=$_SESSION['id'];
+$username = $_SESSION['username'];
+$userid   = $_SESSION['userid'];
         //echo("Hallo $username $userid");
         
         // Eingegebenen Werte aus eintrag_eingabe.php in den Variablen Speichern
